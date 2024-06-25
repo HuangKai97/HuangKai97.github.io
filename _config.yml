@@ -2,10 +2,10 @@
 title: HuK Blog
 SEOTitle: 黄凯的博客 | HuK Blog
 header-img: img/home-bg-2.jpg
-email: jinair1121@gmail.com
-description: "这里是 @LBX蜡笔熊 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员"
-keyword: "蜡笔熊, LBX蜡笔熊, LBX, 蜡笔熊的博客, Lbx Blog, 博客, 个人网站, 互联网, Web, JavaScript, React, React Native, 前端, 设计"
-url: "https://roselifetotj.github.io/" # your host, for absolute URL
+email: ht9350441@gmail.com
+#description: "这里是 @LBX蜡笔熊 的个人博客，与你一起发现更大的世界 | 要做一个有 swag 的程序员"
+keyword: "HuK Blog, 博客, 个人网站, 互联网, 软件实施, 中式项目管理"
+#url: "https://roselifetotj.github.io/" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
@@ -13,9 +13,9 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username: 那个踏浪来的仙女是我的
-zhihu_username: Roselife
-github_username: labixiong
+#weibo_username: 那个踏浪来的仙女是我的
+#zhihu_username: Roselife
+#github_username: labixiong
 # twitter_username: huxpro
 # facebook_username:  huxpro
 # linkedin_username:  firstname-lastname-idxxxx
