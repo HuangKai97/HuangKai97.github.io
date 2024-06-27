@@ -17,7 +17,7 @@ RuoYi-Cloud 是一个 Java EE 分布式微服务架构平台，基于经典技�
 
 RuoYi-Cloud 的框架设计图如下所示：
 
-![framework](img/1.png)
+![framework](/img/1.png)
 
 其中一些核心模块如下所示：
 
@@ -40,11 +40,11 @@ RuoYi-Cloud 的框架设计图如下所示：
 
 以一个具体的用户信息查询请求为例，详细描述每一步的处理过程和各个组件之间的互动。
 
-1. 用户发起请求
+1、 用户发起请求
 
-   用户在浏览器中访问 API 以查询用户信息，URL 为 http://<gateway-host>/api/user/{id}。
+用户在浏览器中访问 API 以查询用户信息，URL 为 http://<gateway-host>/api/user/{id}。
 
-2. 请求到达网关（ruoyi-gateway）
+2、 请求到达网关（ruoyi-gateway）
 
 - ruoyi-gateway 接收到用户请求后，首先进行路由、身份验证和负载均衡。
 - Sentinel/Ribbon 在网关中启用，确保请求的限流和熔断机制。
@@ -58,7 +58,7 @@ RuoYi-Cloud 的框架设计图如下所示：
 5. ruoyi-gateway -> Service-A: 转发用户请求
 ```
 
-3. 请求到达 Service-A
+3、请求到达 Service-A
 
 - Service-A 收到请求后，首先通过 ruoyi-auth 进行认证和授权验证，以确保用户有权限访问该 API。
 - ruoyi-auth 验证通过后，Service-A 开始处理具体的业务逻辑。
@@ -69,7 +69,7 @@ RuoYi-Cloud 的框架设计图如下所示：
 
 ```
 
-4. 处理业务逻辑
+4、处理业务逻辑
 
 - Service-A 从 Redis 缓存中查询用户信息。如果缓存命中，则直接返回结果；如果缓存未命中，则从 MySQL 数据库中查询。
 - 如果从数据库中查询到数据，Service-A 会将数据写入 Redis 缓存，以便下次请求快速响应。
@@ -83,7 +83,7 @@ RuoYi-Cloud 的框架设计图如下所示：
 13. Service-A -> Redis: 将用户信息写入缓存
 ```
 
-5. 分布式追踪
+5、分布式追踪
 
 - 在请求处理的每一步，Sleuth 都会记录链路数据，并将这些数据发送到 Zipkin 或 SkyWalking，以便对请求链路进行追踪和分析。
 - 这样可以监控和分析整个请求的执行时间、路径和可能的瓶颈。
@@ -93,7 +93,7 @@ RuoYi-Cloud 的框架设计图如下所示：
 15. Sleuth -> Zipkin/SkyWalking: 发送链路数据
 ```
 
-6. 日志记录和监控
+6、日志记录和监控
 
 - Service-A 在处理请求时，会记录日志，包括请求的接收、处理和响应情况。这些日志数据通过 ELK 系统进行集中化管理和分析。
 - SpringBootAdmin Server 实时监控 Service-A 的运行状态，包括健康状况、性能指标等，确保服务稳定运行。
@@ -105,7 +105,7 @@ RuoYi-Cloud 的框架设计图如下所示：
 19. SpringBootAdmin Server: 监控服务健康状况
 ```
 
-7. 任务调度
+7、任务调度
 
 - 如果请求涉及到定时任务或周期性操作（例如，定时刷新缓存），这些任务会由 quartz 调度执行。
 - quartz 与 Nacos 集成，确保任务调度的动态配置和管理。
@@ -114,7 +114,7 @@ RuoYi-Cloud 的框架设计图如下所示：
 20. quartz -> Nacos: 注册和管理定时任务
 ```
 
-8. 返回响应
+8、返回响应
 
 - Service-A 处理完成后，将结果返回给 ruoyi-gateway。
 - ruoyi-gateway 再将响应结果返回给前端用户，完成整个请求-响应过程。
