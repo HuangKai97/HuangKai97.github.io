@@ -7,7 +7,9 @@ author: HuK
 header-img: img/post-bg-re-vs-ng2.jpg
 catalog: true
 tags:
-  - Blog
+  - SPA
+  - 多页面应用
+  - 单页面应用
 ---
 
 # 前言
